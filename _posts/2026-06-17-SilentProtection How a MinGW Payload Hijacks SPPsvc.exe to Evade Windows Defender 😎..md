@@ -1,4 +1,6 @@
 
+# Silent Protection: How a MinGW Payload Hijacks SPPsvc.exe to Evade Windows Defender 😎.
+
 MD5 = 0F84697BF55CFC0A7BA358AEEF7BA8FD
 
 SHA-1 = 364854D784BFD046C57675B16970A30C0C611D9E
