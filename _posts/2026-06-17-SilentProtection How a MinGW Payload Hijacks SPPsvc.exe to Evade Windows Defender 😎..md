@@ -26,15 +26,28 @@ In this malware, the attacker uses a fake certification form from a company to s
 
 It only imports two DLLs from the Windows API, which are kernel32.dll (58 times) and msvrt.dll (38 times). Why? Because it uses different past in the kernel32.dll API to do its work.
 
-![](<../../Pasted%20image%2020260617213839.png>)
+![](<../assets/lib/SPPsvc/Pasted image 20260617213839.png>)
 
-![](<../../Pasted%20image%2020260617213858.png>)
+![](<../assets/lib/SPPsvc/Pasted image 20260617213858.png>)
 
 and exports only 4 things that are callbacks. By looking at the import, I have some idea what the malware tries to do, checking for a debugger (IsDebuggerPresent). Also, some interesting things are there also, like sleep, suspend thread, and many more. 
 
-![](<../../Pasted%20image%2020260617214031.png>)
+![](<../assets/lib/SPPsvc/Pasted image 20260617214031.png>)
 
 When I was looking in the strings of the malware (in Ghidra), I found some file location in which there is a mingw location. Why is it using the MinGW? This can be a clue that the malware author is using MinGW to compile rather than Visual Studio because MinGW statically links a lot of libraries. That's why there are many .C extension files in the strings.
 
 **C:/crossdev/src/mingw-w64-v8-git/mingw-w64-libraries/winpthreads/src/rwlock.c**
+
+![](<../assets/lib/SPPsvc/Pasted image 20260617214332.png>)
+
+
+and one another thing is the rwlock jsut below it.
+
+> “DEFINED 14001ce30 s_(((rwlock_t_*)*rwl)->valid_**_LI_14001ce30 ds "(((rwlock_t *)*rwl)->valid == LIFE_RWLOCK) && (((rwlock_t *)*rwl)->busy > 0)" "(((rwlock_t *)*rwl)->valid == LIFE_RWLOCK) && (((rwlock_t *)*rwl)->busy > 0)" string 77 true “**
+
+What does that mean? The **relock is dereferencing a pointer to get to the read-write lock structure in memory.**
+
+This whole line tells us that the malware isn’t a simple, single-threaded script. It manages multiple parallel threads of execution.
+
+![](<../assets/lib/SPPsvc/Pasted image 20260617214535.png>)
 
