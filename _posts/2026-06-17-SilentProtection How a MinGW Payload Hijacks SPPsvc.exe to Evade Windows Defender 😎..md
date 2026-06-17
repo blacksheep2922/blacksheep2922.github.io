@@ -71,3 +71,5 @@ The malware is calling Windows APIs like QueryInformationThread, which is a low-
 - It is a native Windows system call (it is a part of NTAPI) that is used to validate whether a security description grants specific access rights to a client process.
     
 - In this case this is used to change the registry of the victim's Windows to disable Windows Defender.
+
+Dynamic ana
