@@ -51,3 +51,23 @@ This whole line tells us that the malware isn’t a simple, single-threaded scri
 
 ![](<../assets/lib/SPPsvc/Pasted image 20260617214535.png>)
 
+This is the main code that is used to stop the malware from being detected and run after some time or, in this case, first turn off the defender of the victim's Windows.
+
+![](<../assets/lib/SPPsvc/Pasted image 20260617214649.png>)
+
+This is the whole flow of the malware: what changes, how it works. This is the overall flow of the malware.
+
+The SPPsvc.exe is used for the hollowing process.
+
+The malware is calling Windows APIs like QueryInformationThread, which is a low-level Windows native API that retrieves specific information about a thread, such as its page priority, entry point, or debugger status. The malware developer used this to hide a thread by hooking the API. It's an anti-debugger trick for the malware, and if a debugger detaches, it crashes the thread.
+
+## LdrpInitialize
+
+- It is an internal NTFLL function in Windows responsible for performing per-process initialization tasks when a new process is created. Malware often hooks this or uses it during process hollowing to hijack the execution of a suspended process, and this is used because the malware is suspended for a time, and when the defender gets deactivated, the malware does its work.
+    
+
+## NtAccessCheckAndAuditAlarm
+
+- It is a native Windows system call (it is a part of NTAPI) that is used to validate whether a security description grants specific access rights to a client process.
+    
+- In this case this is used to change the registry of the victim's Windows to disable Windows Defender.
