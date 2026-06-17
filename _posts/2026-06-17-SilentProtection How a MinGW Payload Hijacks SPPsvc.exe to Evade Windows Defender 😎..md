@@ -34,3 +34,5 @@ and exports only 4 things that are callbacks. By looking at the import, I have s
 
 ![](<../../Pasted%20image%2020260617214031.png>)
 
+When I was looking in the strings of the malware (in Ghidra), I found some file location in which there is a mingw location. Why is it using the MinGW? This can be a clue that the malware author is using MinGW to compile rather than Visual Studio because MinGW statically links a lot of libraries. That's why there are many .C extension files in the strings.
+
