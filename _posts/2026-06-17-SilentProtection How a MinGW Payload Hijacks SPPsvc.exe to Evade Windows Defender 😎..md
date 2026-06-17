@@ -13,3 +13,24 @@ Original file name is ClientDispatcherAPI.exe
 
 ### Signature
 ![](<../assets/lib/SPPsvc/Pasted image 20260617212951.png>)
+
+In this malware, the attacker uses a fake certification form from a company to show that it is legitimate software.
+
+![](<../assets/lib/SPPsvc/Pasted image 20260617213645.png>)
+
+- This tells about many things, like the malware using the MinGW compiler environment on Windows.
+    
+    - It is a GUI, which means it's not a console application; it will likely run in the background without popping up a command prompt window to alter the user.
+        
+    - The packer: compressed or packet data ".rdata," which means the IDA or Ghidra has high randomness in the .rdata section.
+
+It only imports two DLLs from the Windows API, which are kernel32.dll (58 times) and msvrt.dll (38 times). Why? Because it uses different past in the kernel32.dll API to do its work.
+
+![](<../../Pasted%20image%2020260617213839.png>)
+
+![](<../../Pasted%20image%2020260617213858.png>)
+
+and exports only 4 things that are callbacks. By looking at the import, I have some idea what the malware tries to do, checking for a debugger (IsDebuggerPresent). Also, some interesting things are there also, like sleep, suspend thread, and many more. 
+
+![](<../../Pasted%20image%2020260617214031.png>)
+
