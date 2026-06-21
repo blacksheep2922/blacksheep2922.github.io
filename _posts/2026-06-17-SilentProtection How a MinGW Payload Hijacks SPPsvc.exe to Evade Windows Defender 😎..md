@@ -73,5 +73,4 @@ The malware is calling Windows APIs like QueryInformationThread, which is a low-
 - In this case this is used to change the registry of the victim's Windows to disable Windows Defender.
 
 Dynamic analysis 
-hii
 comming soon :) 
