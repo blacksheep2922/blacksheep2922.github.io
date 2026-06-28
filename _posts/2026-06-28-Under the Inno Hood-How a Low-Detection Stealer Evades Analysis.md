@@ -42,3 +42,5 @@ In this picture, we can see that the executable is packed and obfuscated, which 
 So now I have used another tool for the installer. InnoExtractor is a GUI tool in which we can extract things without running the main executable. This helps me to see what's inside the executable.
 
 ![](<../assets/lib/ojb1leg/Pasted image 20260628233736.png>)
+
+and i got some interesting files and some of these file are very intresing like the devve
