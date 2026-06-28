@@ -36,4 +36,6 @@ In this sample, we didn’t find any signatures in either Detect It Easy or in P
 But what we found in Detect It Easy was very interesting.
 
 ![](<../../Pasted%20image%2020260628232813.png>)
-in this picuture we can see that the the executalbe is packed and obfuscated which means if try to add this to ghidra or ida we will not that many things what we want and the installer is Inno Setup Module 
+
+In this picture, we can see that the executable is packed and obfuscated, which means if we try to add this to Ghidra or IDA, we will not have that many things that we want, and the installer is **an Inno Setup module.**
+
