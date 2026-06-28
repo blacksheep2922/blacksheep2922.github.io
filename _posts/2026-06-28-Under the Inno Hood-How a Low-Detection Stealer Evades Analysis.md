@@ -43,4 +43,4 @@ So now I have used another tool for the installer. InnoExtractor is a GUI tool i
 
 ![](<../assets/lib/ojb1leg/Pasted image 20260628233736.png>)
 
-and i got some interesting files and some of these file are very intresing like the devve
+And I got some interesting files, and some of these files are very interesting, like **devve.ico** and **rzamGo.K,** also the install_script.iss and CodeSection.txt, and when we open the install_script in any text editor, it tells us many things about the installation process.
