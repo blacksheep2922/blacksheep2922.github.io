@@ -29,7 +29,7 @@ File size = 23.14 MB (24260952 bytes)
 
 File Type = Portable Executable 32
 
-In this sample, we didn’t find any signatures in either Detect It Easy or in PE Explorer.
+In this sample, we didn’t find any signatures in either Detect It Easy or in PE Explorer. :)
 
 ![](<../assets/lib/ojb1leg/Pasted image 20260628232644.png>)
 
