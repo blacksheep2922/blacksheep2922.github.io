@@ -3,6 +3,9 @@ layout: post
 title: Under the Inno Hood-How a Low-Detection Stealer Evades Analysis
 categories:
   - C2C
+  - VMProtect
+  - Dropper
+  - AntiVM
 ---
 
 ## Overview
