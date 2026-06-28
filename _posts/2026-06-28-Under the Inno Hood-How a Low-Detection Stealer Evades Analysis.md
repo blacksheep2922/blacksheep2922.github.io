@@ -35,7 +35,10 @@ In this sample, we didn’t find any signatures in either Detect It Easy or in P
 
 But what we found in Detect It Easy was very interesting.
 
-![](<../../Pasted%20image%2020260628232813.png>)
+![](<../assets/lib/ojb1leg/Pasted image 20260628232813.png>)
 
 In this picture, we can see that the executable is packed and obfuscated, which means if we try to add this to Ghidra or IDA, we will not have that many things that we want, and the installer is **an Inno Setup module.**
 
+So now I have used another tool for the installer. InnoExtractor is a GUI tool in which we can extract things without running the main executable. This helps me to see what's inside the executable.
+
+![](<../assets/lib/ojb1leg/Pasted image 20260628233736.png>)
