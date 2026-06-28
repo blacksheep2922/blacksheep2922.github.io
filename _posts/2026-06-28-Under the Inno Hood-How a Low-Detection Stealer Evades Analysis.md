@@ -29,8 +29,11 @@ File size = 23.14 MB (24260952 bytes)
 
 File Type = Portable Executable 32
 
-in this sample we didn’t find any signatures in bother Detect it Easy and in PE explorer
+In this sample, we didn’t find any signatures in either Detect It Easy or in PE Explorer.
 
-but when what we found in the Detect it easy that verry interesting.
+![](<../assets/lib/ojb1leg/Pasted image 20260628232644.png>)
 
-![](<../assets/lib/ojb1leg/Pasted image 20260628232222.png>)
+But what we found in Detect It Easy was very interesting.
+
+![](<../../Pasted%20image%2020260628232813.png>)
+in this picuture we can see that the the executalbe is packed and obfuscated which means if try to add this to ghidra or ida we will not that many things what we want and the installer is Inno Setup Module 
