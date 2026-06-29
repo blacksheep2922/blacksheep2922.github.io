@@ -71,3 +71,14 @@ The important part in this picture is "Run" -> it tells about where the real mal
         
     - nowait: This flag allows the installer to launch an application silently in the background.
 
+
+## The main Hero -The  oJb1eg.exe
+
+MD5 = **11a5de0ad53c4e1e9b5d5404a9c9e755**
+
+SHA-1 = **6b5368715772a9368960beff02c575144481f277**
+
+SHA-256 =**2e42798c8bfb951de668a4df82b7fb81eb9fd98ae5b0000d75a3422665c05f85**
+VirusTotal Score :) dammn.
+
+![](<../assets/lib/ojb1leg/Pasted image 20260629100833.png>)
