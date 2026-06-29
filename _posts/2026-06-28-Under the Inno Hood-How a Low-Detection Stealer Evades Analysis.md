@@ -138,3 +138,5 @@ called by this malware.
 ![](<../assets/lib/ojb1leg/Pasted image 20260629105902.png>)
 
 ![](<../assets/lib/ojb1leg/Pasted image 20260629110017.png>)
+
+this is the tihngs that i have found 
