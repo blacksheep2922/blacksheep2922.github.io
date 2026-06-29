@@ -58,4 +58,6 @@ Instead of installing to Program Files like normal software, it is hiding deep w
 
 ### Evasion Tactics
 
-Unistallable =no  : This is a calssic malware behavior . it intentinlally breaks the ability 
+Uninstallable =no  : This is a classic malware behavior . it intentionally breaks the ability for the user to remove it via the standard "Add/Remove Program" menu in Windows.
+
+Privileges Required = lowest : The malware developer configured this to run with standard user privileges. This means the installer won't rigger a noisy User Account Control(UAC) prompt asking for admin rights. 
