@@ -61,3 +61,9 @@ Instead of installing to Program Files like normal software, it is hiding deep w
 Uninstallable =no  : This is a classic malware behavior . it intentionally breaks the ability for the user to remove it via the standard "Add/Remove Program" menu in Windows.
 
 Privileges Required = lowest : The malware developer configured this to run with standard user privileges. This means the installer won't rigger a noisy User Account Control(UAC) prompt asking for admin rights. 
+![](<../assets/lib/ojb1leg/Screenshot%202026-06-27%20182039.png>)
+
+the important part in this picture is Run -> it tells about were the real malware will install itself as well as it as some more things to see like the Flags Sections . 
+* **Flags: hidewizard nowait***
+	* The hidewizard : this flag hide the installer not to wait for the lanucher program to terminate before proceeding to the next step or hiding the installation.
+	* nowait : This falgs allow the isntaller to launch an application silently in the background
