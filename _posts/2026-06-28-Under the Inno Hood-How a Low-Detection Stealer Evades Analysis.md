@@ -78,7 +78,14 @@ MD5 = **11a5de0ad53c4e1e9b5d5404a9c9e755**
 
 SHA-1 = **6b5368715772a9368960beff02c575144481f277**
 
-SHA-256 =**2e42798c8bfb951de668a4df82b7fb81eb9fd98ae5b0000d75a3422665c05f85**
+SHA-256 =**2e42798c8bfb951de668a4df82b7fb81eb9fd98ae5b0000d75a3422665c05f85
+**
+Imports : **rzamGo.k** 
+
+File Size : **1.16MB**
+
 VirusTotal Score :) dammn.
 
 ![](<../assets/lib/ojb1leg/Pasted image 20260629100833.png>)
+
+![](<../assets/lib/ojb1leg/Screenshot 2026-06-27 182741.png>)this tells about many things like we can't see dll and can't put in he dubugger like ghidra
