@@ -99,3 +99,9 @@ I couldn't find much of it information because the code was obfuscated and packe
 
 new when I run the malware in the 64x dbg and in the symbol table I found this: obj1eg.exe and rzamgo.k  
 That confirms that the obj1eg is just a simple stub or runner; its entire job is to lead rzamGo.k into memory. The windows are treating it like a dynamic link library.
+
+![](<../assets/lib/ojb1leg/Screenshot 2026-06-28 094636.png>)
+
+
+## Action time 
+
