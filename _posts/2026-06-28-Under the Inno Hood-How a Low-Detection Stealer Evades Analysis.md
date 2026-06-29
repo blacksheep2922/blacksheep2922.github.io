@@ -17,7 +17,7 @@ This analyzed malware is a sophisticated, multi-stage threat that initially depl
 
 **Original File name = 8Sf0.exe**
 
-Some other names = ==2026-6-26 1.exe , 7317d297686d154b4d78217e100df5f57949f05efe095f1a017b5988cddef98b.exe==
+Some other names = **2026-6-26 1.exe , 7317d297686d154b4d78217e100df5f57949f05efe095f1a017b5988cddef98b.exe**
 
 **MD5=C21C6962C9902DDBF4D08537EA7D96A4**
 
@@ -70,3 +70,4 @@ The important part in this picture is "Run" -> it tells about where the real mal
     - The hidewizard: this flag hides the installer, not to wait for the launcher program to terminate before proceeding to the next step or hiding the installation.
         
     - nowait: This flag allows the installer to launch an application silently in the background.
+
