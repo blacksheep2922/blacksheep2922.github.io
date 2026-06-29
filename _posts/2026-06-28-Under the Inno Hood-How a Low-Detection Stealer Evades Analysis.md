@@ -48,10 +48,14 @@ And I got some interesting files, and some of these files are very interesting, 
 ![](<../assets/lib/ojb1leg/Pasted image 20260629094156.png>)
 
 ![](<../assets/lib/ojb1leg/Pasted image 20260629094238.png>)
-from these image i can found many detials like what is the drop loation the levelel of privilage required and envasion tactic 
+From these images I can find many details, like what the drop location is, the level of privilege required, and the evasion tactic.
 
-### The Drop location 
+### The drop location
 
-DefaultDirName: {localappdata}\Local\assembly\d13\GDQ8\O30x
+**DefaultDirName: {localappdata}\Local\assembly\d13\GDQ8\O30x**
 
-instead of ins
+Instead of installing to Program Files like normal software, it is hiding deep within the user's AppData\Local directory. By creating fake folders named "assembly," it is trying to blend in with legitimate Windows .NET framework directories so the user won't notice.
+
+### Evasion Tactics
+
+Unistallable =no  : This is a calssic malware behavior . it intentinlally breaks the ability 
