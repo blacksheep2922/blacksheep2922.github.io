@@ -25,9 +25,9 @@ Some other names = ==2026-6-26 1.exe , 7317d297686d154b4d78217e100df5f57949f05ef
 
 **SHA-256 = 7317d297686d154b4d78217e100df5f57949f05efe095f1a017b5988cddef98b**
 
-File size = 23.14 MB (24260952 bytes)
+File size = **23.14 MB (24260952 bytes)**
 
-File Type = Portable Executable 32
+File Type = **Portable Executable 32**
 
 In this sample, we didn’t find any signatures in either Detect It Easy or in PE Explorer. :)
 
@@ -44,3 +44,14 @@ So now I have used another tool for the installer. InnoExtractor is a GUI tool i
 ![](<../assets/lib/ojb1leg/Pasted image 20260628233736.png>)
 
 And I got some interesting files, and some of these files are very interesting, like **devve.ico** and **rzamGo.K,** also the install_script.iss and CodeSection.txt, and when we open the install_script in any text editor, it tells us many things about the installation process.
+
+![](<../assets/lib/ojb1leg/Pasted image 20260629094156.png>)
+
+![](<../assets/lib/ojb1leg/Pasted image 20260629094238.png>)
+from these image i can found many detials like what is the drop loation the levelel of privilage required and envasion tactic 
+
+### The Drop location 
+
+DefaultDirName: {localappdata}\Local\assembly\d13\GDQ8\O30x
+
+instead of ins
