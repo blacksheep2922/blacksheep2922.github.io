@@ -139,4 +139,8 @@ called by this malware.
 
 ![](<../assets/lib/ojb1leg/Pasted image 20260629110017.png>)
 
-this is the tihngs that i have found 
+this is the things that i have found (this is my own tool so if you like it , you can buy :| )
+
+so now we have to see network packets so lets when we 
+
+and where we found the C2 server 
