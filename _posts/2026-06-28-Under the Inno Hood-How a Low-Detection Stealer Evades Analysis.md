@@ -144,3 +144,13 @@ this is the things that i have found (this is my own tool so if you like it , yo
 so now we have to see network packets so lets when we 
 
 and where we found the C2 server 
+
+![](<../assets/lib/ojb1leg/Pasted%20image%2020260629110608.png>)
+
+**the tai8yan8jt[.]com]****
+
+**the destination ip 192[.]168[.]139[.]**
+
+this domain is not working right now to can't found that what kind of data the malware is sending 
+
+![](<../../Pasted%20image%2020260629110745.png>)
