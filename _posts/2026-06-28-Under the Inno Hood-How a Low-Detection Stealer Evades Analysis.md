@@ -108,15 +108,21 @@ That confirms that the obj1eg is just a simple stub or runner; its entire job is
 when we run the first malware (8Sf0.exe)
 
 As we predicted earlier, it will detect that it is running on the virtual machine and will not work and delete the dropper and erase its path or footprint.
-![](<../../Pasted%20image%2020260629104524.png>)
+![](<../assets/lib/ojb1leg/Pasted image 20260629104524.png>)
 
 these are the files it create 
 
-![](<../../Pasted%20image%2020260629104607.png>)
+![](<../assets/lib/ojb1leg/Pasted image 20260629104607.png>)
 And when it detects that it is running on the virtual box, it starts deleting itself.
 
 and it don't show any sign of the network connection.
 
-![](<../../Pasted%20image%2020260629104819.png>)
+![](<../assets/lib/ojb1leg/Pasted image 20260629104819.png>)
                                   The CFG graph
-![](<../../Pasted%20image%2020260629104903.png>)
+![](<../assets/lib/ojb1leg/Pasted image 20260629104903.png>) THE CALLER GRPAH and Fuction heapmap 
+![697](<../assets/lib/ojb1leg/Pasted image 20260629105316.png>)
+
+
+## Now the Main malware 
+
+because of we have extracted the main malware and its file before running it so we have it : ) 
