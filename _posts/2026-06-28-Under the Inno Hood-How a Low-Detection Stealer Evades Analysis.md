@@ -105,4 +105,6 @@ That confirms that the obj1eg is just a simple stub or runner; its entire job is
 
 ## Action time 
 
-when we run the first malware (8Sf0.exe )
+when we run the first malware (8Sf0.exe)
+
+As we predicted earlier, it will detect that it is running on the virtual machine and will not work and delete the dropper and erase its path or footprint.
