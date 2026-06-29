@@ -88,4 +88,9 @@ VirusTotal Score :) dammn.
 
 ![](<../assets/lib/ojb1leg/Pasted image 20260629100833.png>)
 
-![](<../assets/lib/ojb1leg/Screenshot 2026-06-27 182741.png>)this tells about many things like we can't see dll and can't put in he dubugger like ghidra
+![](<../assets/lib/ojb1leg/Screenshot 2026-06-27 182741.png>)This tells about many things, like we can't see DLLs and can't put them in the debugger like Ghidra and IDA; it is developed in C++ and Visual Studio.
+
+and it is used protector : **VMProtect**
+![](<../assets/lib/ojb1leg/Pasted image 20260629101758.png>)
+
+I couldn't find much of it information because the code was obfuscated and packed to let me try something new.
