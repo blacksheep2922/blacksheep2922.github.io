@@ -126,3 +126,15 @@ and it don't show any sign of the network connection.
 ## Now the Main malware 
 
 because of we have extracted the main malware and its file before running it so we have it : ) 
+![697](<../assets/lib/ojb1leg/Pasted%20image%2020260629105615.png>)
+It also deleted many files and created some, but they are not that important; they are like tmp files.
+
+but when we run it, it creates a chile process 
+![](<../assets/lib/ojb1leg/Pasted image 20260629105803.png>)
+
+In this case, as we predict that it is protected with VMProtect, we can't find what DLL and API are 
+called by this malware.
+
+![](<../assets/lib/ojb1leg/Pasted image 20260629105902.png>)
+
+![](<../assets/lib/ojb1leg/Pasted image 20260629110017.png>)
