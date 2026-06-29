@@ -94,3 +94,4 @@ and it is used protector : **VMProtect**
 ![](<../assets/lib/ojb1leg/Pasted image 20260629101758.png>)
 
 I couldn't find much of it information because the code was obfuscated and packed to let me try something new.
+new when i run the malware in the 64x dbg and in the symbol 
