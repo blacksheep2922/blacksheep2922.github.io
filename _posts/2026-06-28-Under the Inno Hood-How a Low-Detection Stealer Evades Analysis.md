@@ -63,7 +63,10 @@ Uninstallable =no  : This is a classic malware behavior . it intentionally break
 Privileges Required = lowest : The malware developer configured this to run with standard user privileges. This means the installer won't rigger a noisy User Account Control(UAC) prompt asking for admin rights. 
 ![](<../assets/lib/ojb1leg/Screenshot%202026-06-27%20182039.png>)
 
-the important part in this picture is Run -> it tells about were the real malware will install itself as well as it as some more things to see like the Flags Sections . 
-* **Flags: hidewizard nowait***
-	* The hidewizard : this flag hide the installer not to wait for the lanucher program to terminate before proceeding to the next step or hiding the installation.
-	* nowait : This falgs allow the isntaller to launch an application silently in the background
+The important part in this picture is "Run" -> it tells about where the real malware will install itself as well as some more things to see, like the flag sections.
+
+- **Flags: hidewizard nowait***
+    
+    - The hidewizard: this flag hides the installer, not to wait for the launcher program to terminate before proceeding to the next step or hiding the installation.
+        
+    - nowait: This flag allows the installer to launch an application silently in the background.
