@@ -105,3 +105,4 @@ That confirms that the obj1eg is just a simple stub or runner; its entire job is
 
 ## Action time 
 
+when we run the first malware (8Sf0.exe )
