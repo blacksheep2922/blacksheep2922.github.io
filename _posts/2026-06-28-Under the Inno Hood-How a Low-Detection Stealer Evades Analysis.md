@@ -153,6 +153,8 @@ and where we found the C2 server
 
 this domain is not working right now to can't found that what kind of data the malware is sending 
 
-![](<../../Pasted%20image%2020260629110745.png>)
+![](<../assets/lib/ojb1leg/Pasted image 20260629110745.png>)
 
 still the score is 1/92 nicee :) . 
+
+Have great reading 
