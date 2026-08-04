@@ -154,7 +154,7 @@ From both of the screenshots we have, our Thanos, aka Server,
 
 These are all the multi-algorithm pools they connect to a larger network of miners.
 
-When we track the ip to iplookup we found somethings intresting , its an ip form France and its a data center and the hostname Hostname = [ns31430818.**ip-141-94-96.eu**](http://ns31430818.ip-141-94-96.eu/)
+When we track the ip to iplookup we found somethings intresting , its an ip form France and its a data center and the hostname Hostname = ns31430818[.]**ip-141-94-96[.]eu**](http[:]//ns31430818[.]ip-141-94-96[.]eu/)
 
 ![](<../assets/lib/Miner/Pasted image 20260804210810.png>)
 
