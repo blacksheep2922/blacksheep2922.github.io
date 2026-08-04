@@ -137,11 +137,12 @@ The malware is poorly written or highly aggressive, and it does not check if a c
 
 when i was looking in the network logs i found somethings interesting
 
+![](<../assets/lib/Miner/Pasted image 20260804210716.png>)
 
 
 because of that we got the destination ip also
 
-
+![](<../assets/lib/Miner/Pasted image 20260804210747.png>)
 
 From both of the screenshots we have, our Thanos, aka Server,
 
@@ -154,3 +155,15 @@ From both of the screenshots we have, our Thanos, aka Server,
 These are all the multi-algorithm pools they connect to a larger network of miners.
 
 When we track the ip to iplookup we found somethings intresting , its an ip form France and its a data center and the hostname Hostname = [ns31430818.**ip-141-94-96.eu**](http://ns31430818.ip-141-94-96.eu/)
+
+![](<../assets/lib/Miner/Pasted image 20260804210810.png>)
+
+and these are the providers
+![](<../assets/lib/Miner/Pasted image 20260804210843.png>)
+
+also when you search the ip on virus total is shows this
+
+![](<../assets/lib/Miner/Pasted image 20260804210910.png>)
+
+## The Yara rule ( Thor )
+![](<../assets/lib/Miner/Pasted image 20260804210949.png>)
