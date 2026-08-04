@@ -26,5 +26,61 @@ This sample is a heavily packed, anti-VM/anti-debug cryptomining trojan that eva
 
 **FILE SIZE = 5,210,112**
 
-**Original file name =LockAppHost14a02b.exe**
-![](../../Pasted%20image%2020260804210200.png>)
+**Original file name =LockAppHost14a02b.exe
+
+![](<../assets/lib/Miner/Pasted image 20260804210200.png>)
+
+By looking at this image, we can see that doing static analysis would be difficult because debuggers like Ghidra and IDA will not give the output we want. So we have to change our approach; we have to shift to the x64dbg because it has the ScyllaHide plugin that helps us in this case.
+
+![](<../assets/lib/Miner/Pasted%20image%2020260804210245.png>)
+
+While looking at the CFF explorer, we found out that the malware only imports two DLLs: **KERNEL32.dll** and **USER32.dll.**
+
+Because of the projection, the generic because of that, the structural section of the PE file lies in .txt .data and has unusual names or permissions.
+
+So I changed the approach. I put the malware into the debugger x64dbg and turned on the **ScyllaHide** plugin that gives me a lot of information about it.
+
+![](<../assets/lib/Miner/Pasted%20image%2020260804210318.png>)
+
+While looking in the x64dbg, I found some things entering the malware using the function that are not well documented by Microsoft (there was a meme going in my mind: fukkkk, Microsoft), but there are some more interesting things in the debugger.
+
+The MaxLoaderThreads is a Windows registry setting used to control the parallel loading of DLLs during process initialization located under **HKEY_LOCAL_MACHINE\SOFTWARE\. Microsoft\Windows NT\CurrentVersion\Image File Execution Options**
+
+Setting to 1 disables parallel loading, forcing the process to load DLLs sequentially using only the main thread, and I also find some interesting terms like "RaiseExceptionOnPossibleDeadlock" and "tracingFlags UseImpersonatedDeviceMap."
+
+and MaxDeadActivationContext
+
+![](<../assets/lib/Miner/Pasted%20image%2020260804210341.png>)
+
+**L"\\Registry\\Machine\\Software\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Compatibility Assistant\\**
+
+This is a PCA—it belongs to the Windows Program Compatibility Assistant.
+
+This is a built-in Windows feature designed to monitor programs as they run. If a program crashes, fails to install, or has known compatibility issues with the current version of Windows, the PCA intervenes.
+
+It also detects the debug environment, and it is self-deleted.
+
+Malware is an anti-VM and debug; because of that, we can’t see that much of it, so we have to do dynamic analysis.
+
+## Dynamic Analysis ( Level 2 - The Playground )
+
+so when the malware run in the virtual machine, it create two child process sc.exe and sonhost.exe which both are legitimate windows process , so no malware is downloaded but the main things s that the malware delete itself after running it, because of the detection it is checking that it is running on the virtual machine or not but we got the information we want.
+
+![](<../assets/lib/Miner/Pasted image 20260804210508.png>)
+
+and this is the graph of the malware
+
+![](<../assets/lib/Miner/Pasted image 20260804210535.png>)
+
+These are control flow diagrams of the malware. We can’t see that much because of the obfuscation that is created by the malware developer, but we have also found that the malware created some powerful fields that have their own commands in them. There are a total of 4 files that are created.
+
+**PowerShell_transcript.DESKTOP-4EUNG44.5zLDQykN.20260803083750.txt**
+
+**PowerShell_transcript.DESKTOP-4EUNG44.5zLDQykN.20260803083752.txt**
+
+**PowerShell_transcript.DESKTOP-4EUNG44.5zLDQykN.20260803084011.txt**
+
+**PowerShell_transcript.DESKTOP-4EUNG44.5zLDQykN.20260803083909.txt**
+
+These are the four files that are created, and each text file has a different role in it, as we can see some glimpses of it in the debugger in that.
+
