@@ -84,3 +84,73 @@ These are control flow diagrams of the malware. We can’t see that much because
 
 These are the four files that are created, and each text file has a different role in it, as we can see some glimpses of it in the debugger in that.
 
+## The PowerShell Assemble
+
+In one of the text files there are the
+
+In one of the text files there are the
+
+### **PowerShell_transcript.DESKTOP-4EUNG44.5zLDQykN.20260803083752.txt**
+
+**$key='HKLM:\SYSTEM\CurrentControlSet\Services\WaaSMedicSvc';**
+
+- It points directly to the registry key that controls the Windows update of Microsoft services. This service is responsible for repairing windows and updating components if they break.
+
+**$acl= Get-Acl $key; ... $acl. SetOwner($admin); ... Set-Acl $key $acl;**
+
+- Permissions Hijacking—by default, even administrators cannot easily modify this specific registry key. The script creates a new access rule, takes ownership of the key, and grants the Administrators group “Full Control."
+
+Set-ItemProperty $key -Name 'Start' -Value 4 -Type DWord
+
+- The Kill Switch—it changes the Start value of the service to 4. In the Windows Registry, setting a service’s Start value to 4 means Disable (2 is Automatic, 3 is Manual).
+
+The things are mainly used for the ransomware, rootkits, or cryptominers (in our case we have a cryptominer) and frequently target WaasSMedicSvc.
+
+If a system cannot update, it cannot download the latest security patches or updated antivirus definitions. By breaking the service designed to fix Windows Update, the malware ensures the machine remains vulnerable, making it easier for the attackers to maintain persistence or exploit known vulnerabilities.
+
+### **PowerShell_transcript.DESKTOP-4EUNG44.5zLDQykN.20260803084011.txt**
+
+In this text file the commands are used to blind Windows Defender and create a safe environment for the malware where its malicious files can run without being scanned or blocked. But unlike the first script, we have seen it can’t be run because there is an error occurring in it.
+
+- The script runs the command Add-MpPreference, which is the built-in PowerShell tool used to change Microsoft Defender Antivirus settings. The malware tried to add massive security. If successful, the malware could download and execute any ransomware, rootkit, or virus in those folders without triggering an antivirus alert.
+- **ExclusionPath @($env:UserProfile, $env:ProgramData, $env:TEMP):** It tells Defender to completely ignore anything happening in the User Profile, ProgramData, and Temp folders. These are the three most common "drop zones" where malware hides its payloads.
+- **ExclusionExtension @('.exe', '.sys'):** It tells Defender to ignore _all_ executable programs (.exe) and system drivers (.sys) across the entire computer.
+- **Force:** Attempts to push these rules through silently without any prompts.
+
+### **PowerShell_transcript.DESKTOP-4EUNG44.5zLDQykN.20260803083750.txt**
+
+This script has the same purpose as the last one, but when we look at the time stamp in it, we have the picture of how the PowerShell is designed, which tells us that if one script is not working, the other will do its work (to disable the Windows Defender).
+
+Here is the timeline of the attack based on the transcripts:
+
+- **08:37:50 (This Transcript):** The malware attempts to add Windows Defender exclusions (Add-MpPreference). It fails because the Defender/WMI provider is already broken.
+- **08:37:52 (First Transcript):** Two seconds later, the malware executes the script to disable the Windows Update Medic Service (WaaSMedicSvc). It succeeds in hijacking the registry permissions.
+- **08:40:11 (Second Transcript):** Over two minutes later, the malware **retries** the exact same Defender exclusion command it tried at 08:37:50. It fails again.
+
+and the last power-sell-it works the same as the last three ones. On my VM, this command won’t work because I had disabled Windows Defender earlier. 🙂 (I am an idiot.) Jokes aside,
+
+It is an automatic script; the attacker is not typing these commands manually. This is an automated payload running in the background.
+
+The malware is poorly written or highly aggressive, and it does not check if a command succeeds before moving on, and it blindly loops or retries failed commands multiple times until it works.
+
+## Now lets find the thanos (C2 server 🙂)
+
+when i was looking in the network logs i found somethings interesting
+
+
+
+because of that we got the destination ip also
+
+
+
+From both of the screenshots we have, our Thanos, aka Server,
+
+- IP = 141[.]94[.]96[.]144
+- Pool 1.0
+- Daemon1.0
+- Mining Pool 1.0
+- mining.pool0
+
+These are all the multi-algorithm pools they connect to a larger network of miners.
+
+When we track the ip to iplookup we found somethings intresting , its an ip form France and its a data center and the hostname Hostname = [ns31430818.**ip-141-94-96.eu**](http://ns31430818.ip-141-94-96.eu/)
