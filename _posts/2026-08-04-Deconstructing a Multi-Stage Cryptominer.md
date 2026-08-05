@@ -88,8 +88,6 @@ These are the four files that are created, and each text file has a different ro
 
 In one of the text files there are the
 
-In one of the text files there are the
-
 ### **PowerShell_transcript.DESKTOP-4EUNG44.5zLDQykN.20260803083752.txt**
 
 **$key='HKLM:\SYSTEM\CurrentControlSet\Services\WaaSMedicSvc';**
