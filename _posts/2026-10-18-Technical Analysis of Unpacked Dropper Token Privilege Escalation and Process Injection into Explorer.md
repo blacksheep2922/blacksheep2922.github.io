@@ -71,7 +71,7 @@ as we see in the import section the ReCloseKey is used to chagne the registry
 
 when we looks down we found what the whole malware is doing
 
-![](<Pasted image 20261018194011.png>)
+![](<../assets/lib/processinjection/Pasted image 20261018194011.png>)
 The file path it opens is HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run.
 
 is represented by 0xffffffff80000001. It then writes the path of the newly copied executable to a registry key named "Syshost." This ensures the malware runs automatically every time the user logs in.
