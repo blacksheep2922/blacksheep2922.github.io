@@ -97,7 +97,7 @@ In this, the main goal of the malware is to check what privileges it has, and th
 
 Now we get the whole idea, but we also have the SHELL32. dll lets us analyze it too
 
-![](<Pasted image 20261018194213.png>)
+![](<../assets/lib/processinjection/Pasted image 20261018194213.png>)
 
 - **Directory Resolution (SHGetFolderPathW):** The code calls SHGetFolderPathW with the second parameter set to 0x1a. In the Windows API, 0x1a is the hexadecimal value for the constant CSIDL_APPDATA. This instructs the system to return the path to the current user's Roaming AppData folder (e.g., C:\Users\<username>\AppData\Roaming).
 - **String Construction:** The do...while loop calculates the string length of the returned directory path. It then uses internal C++ standard library functions (FID_conflict:append) to append a backslash (likely DAT_14002db1c) and the hardcoded string L"syshost.exe."
