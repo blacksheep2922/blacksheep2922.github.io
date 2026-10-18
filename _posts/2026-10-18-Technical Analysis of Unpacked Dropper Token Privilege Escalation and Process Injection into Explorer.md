@@ -13,7 +13,7 @@ layout: post
 # Overview 
 This report delivers a technical malware analysis of an uncompressed, 64-bit native Windows executable compiled with Microsoft Visual Studio 2019. Despite the complete absence of binary packing or code obfuscation, the sample implements a classic, multi-stage infection workflow focused on stealth execution, access token manipulation, registry-based persistence, and target process injection.
 
-![](<../assets/lib/processinjection/Pasted image 20261018192255.png>)
+![](<Pasted image 20261018192255.png>)
 
 MD5 : 3DE59C7196A3DA211BF49815D0C10336
 SHA-256: 28fd91c15efccb7678249f03890952819453df461eef83ef1b12a562f9d35ac4
