@@ -43,7 +43,7 @@ There are 6 imports in which some of them are red flags, or we can say they are 
 
 * ***AdjustTokenPrivileges: It** is an API function used by malware to enable or disable specific privileges within a process’s access token, used in privilege escalation and defense evasion.
 
-* OpenProcessToken: It is a function primarily used in malware to facilitate access token manipulation, a technique categorized under **MITRE ATT&CK T1134.**
+* **OpenProcessToken:** It is a function primarily used in malware to facilitate access token manipulation, a technique categorized under **MITRE ATT&CK T1134.**
 
 * ***LookupPrivilegeValueEW**: It is a function that is used to retrieve the locally unique identifier (LUID) for a specific privilege name, which is a critical step in privilege escalation and access token manipulation.
 
@@ -54,3 +54,26 @@ These functions are used to do privilege escalation and other functions like reg
 * **RegCreateKeyW**: It is a function that is used to create a new registry key or open existing ones.
 
 * **RegSetValueExW** is used to set the data and type of a specified value under a registry key. It is primarily abused for persistence, privilege escalation, and defense evasion.
+### KERNEL32.dll
+
+In kernel32.dll there are not so special functions used; some simple functions are used that are used by simple programs. WriteProcessMemory and WriteConsoleW are some of the functions that can be used to do some nasty things.
+
+### SHELL32.dll
+
+SHGetFolderPathW: It is used to dynamically locate special system directories; it allows software to adapt to different user profiles and Windows versions without relying on or brittle, hardcoded paths, thereby increasing its portability and stealth.
+
+Now when we open the executable in a debugger like Ghidra, we see each one of them working in the code.
+
+![](<Pasted image 20261018193906.png>)
+
+as we see in the import section the ReCloseKey is used to chagne the registry
+![](<Pasted image 20261018193939.png>)
+
+when we looks down we found what the whole malware is doing
+
+![](<Pasted image 20261018194011.png>)
+The file path it opens is HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run.
+
+is represented by 0xffffffff80000001. It then writes the path of the newly copied executable to a registry key named "Syshost." This ensures the malware runs automatically every time the user logs in.
+
+![[Pasted image 20261018194043.png]]
