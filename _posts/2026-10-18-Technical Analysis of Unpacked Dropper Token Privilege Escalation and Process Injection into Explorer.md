@@ -105,3 +105,4 @@ Now we get the whole idea, but we also have the SHELL32. dll lets us analyze it 
 - **Return:** The final constructed path (e.g., C:\Users\<username>\AppData\Roaming\syshost.exe) is returned to the caller via param_1, which acts as an out-parameter pointer for the constructed object.
 
 Thanks for reading 
+:)
