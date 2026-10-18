@@ -104,3 +104,4 @@ Now we get the whole idea, but we also have the SHELL32. dll lets us analyze it 
 - **Memory Management:** The verbose blocks checking if (7 < uStack_240) and calling thunk_FUN_140005458 are the decompiler's representation of memory cleanup for C++ std::wstring objects. It is checking if the string was long enough to require heap allocation, and if so, freeing that memory before the function returns.
 - **Return:** The final constructed path (e.g., C:\Users\<username>\AppData\Roaming\syshost.exe) is returned to the caller via param_1, which acts as an out-parameter pointer for the constructed object.
 
+Thanks for reading 
