@@ -76,4 +76,31 @@ The file path it opens is HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVe
 
 is represented by 0xffffffff80000001. It then writes the path of the newly copied executable to a registry key named "Syshost." This ensures the malware runs automatically every time the user logs in.
 
-![[Pasted image 20261018194043.png]]
+![](<Pasted image 20261018194043.png>)
+
+**Execution of Payload:** It prepares to launch the copied file using CreateProcessW. It sets wShowWindow to 0 (SW_HIDE) and uses the creation flag 0x8000000 (CREATE_NO_WINDOW). This executes the new malware instance completely invisibly in the background.
+
+Now when we look at the **LookupPrivilegeValueW**
+
+We found what we have seen in the PE Explorer, and we predicted
+
+This code is used to process injection
+
+![](<Pasted image 20261018194119.png>)
+
+In this we can see that this code is used for process injection, especially targeting "explorer.exe." This technique is used by malware developers to hide malicious activity within a legitimate, twisted system process.
+
+second
+
+![](<Pasted image 20261018194145.png>)
+In this, the main goal of the malware is to check what privileges it has, and then it creates the process, as we see in the above, that it is doing the process injection. In this code, they are creating the role to do that.
+
+Now we get the whole idea, but we also have the SHELL32. dll lets us analyze it too
+
+![](<Pasted image 20261018194213.png>)
+
+- **Directory Resolution (SHGetFolderPathW):** The code calls SHGetFolderPathW with the second parameter set to 0x1a. In the Windows API, 0x1a is the hexadecimal value for the constant CSIDL_APPDATA. This instructs the system to return the path to the current user's Roaming AppData folder (e.g., C:\Users\<username>\AppData\Roaming).
+- **String Construction:** The do...while loop calculates the string length of the returned directory path. It then uses internal C++ standard library functions (FID_conflict:append) to append a backslash (likely DAT_14002db1c) and the hardcoded string L"syshost.exe."
+- **Memory Management:** The verbose blocks checking if (7 < uStack_240) and calling thunk_FUN_140005458 are the decompiler's representation of memory cleanup for C++ std::wstring objects. It is checking if the string was long enough to require heap allocation, and if so, freeing that memory before the function returns.
+- **Return:** The final constructed path (e.g., C:\Users\<username>\AppData\Roaming\syshost.exe) is returned to the caller via param_1, which acts as an out-parameter pointer for the constructed object.
+
