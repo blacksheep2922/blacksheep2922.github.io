@@ -106,3 +106,4 @@ Now we get the whole idea, but we also have the SHELL32. dll lets us analyze it 
 
 Thanks for reading 
 :)
+![](<../assets/lib/SPPsvc/Pasted image 20260617212951.png>)
